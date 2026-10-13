@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+        }
+
+        #player-container {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        ruffle-player {
+            width: 100% !important;
+            height: 100% !important;
+            border: none !important;
+            outline: none !important;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+
+    <div id="player-container"></div>
+
+    <script src="ruffle.js"></script>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            let ruffle = window.RufflePlayer.newest();
+            let player = ruffle.createPlayer();
+
+            player.config = {
+                splashScreen: false,
+                preloader: false,
+                autoplay: "on",
+                unmuteOverlay: "hidden",
+                contextMenu: "off",
+                letterbox: "off",
+                allowScriptAccess: true,
+                forceScale: true
+            };
+
+            let container = document.getElementById("player-container");
+            container.appendChild(player);
+
+            player.load("main.swf");
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "F12" || (e.ctrlKey && e.key.toLowerCase() === "u")) {
+                e.preventDefault();
+            }
+        });
+    </script>
+
+</body>
+</html>

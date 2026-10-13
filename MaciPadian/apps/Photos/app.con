@@ -1,0 +1,6 @@
+<config>
+<apptype>local</apptype>
+<applink>index.html</applink>
+<bg>-webkit-linear-gradient(top, rgba(143,200,0,1) 0%,rgba(143,200,0,1) 100%)</bg>
+<txt>#fff</txt>
+</config>

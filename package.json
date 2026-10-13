@@ -1,0 +1,30 @@
+{
+  "name": "iPadian-plus",
+  "version": "1.0.0",
+  "description": "iPadian+",
+  "author": "lucpastc",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:win": "electron-builder --win"
+  },
+  "dependencies": {
+    "pretty-bytes": "^2.0.1",
+    "stylus": "latest"
+  },
+  "devDependencies": {
+    "electron": "latest",
+    "electron-builder": "latest"
+  },
+  "build": {
+    "appId": "com.lucpastc.ipadian.plus.app",
+    "asar": false,
+    "win": {
+      "target": "dir",
+      "icon": "icon.png"
+    },
+    "directories": {
+      "output": "dist"
+    }
+  }
+}

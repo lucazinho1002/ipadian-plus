@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <title>App Store</title>
+  <link rel="stylesheet" href="../../css/framework7.ios.min.css">
+  <link rel="stylesheet" href="../../css/framework7.ios.colors.min.css"[cite: 5]>
+  <link rel="stylesheet" href="../../css/my-app.css">
+  <script src="jquery-min.js"></script>
+</head>
+<body>
+
+  <!-- Links popover -->
+  <div class="popover popover-links">
+    <div class="popover-angle"></div>
+    <div class="popover-inner">
+      <div class="list-block">
+        <ul>
+          <li><a href="#" class="list-button item-link">Games</a></li>
+          <li><a href="#" class="list-button item-link">Communications</a></li>
+          <li><a href="#" class="list-button item-link">Music</a></li>
+          <li><a href="#" class="list-button item-link">Productivity</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Detalhes do App (Popup) -->
+  <div class="popup first_page">
+    <div class="content-block">
+      <div class="gd">
+        <img class="dpic" src="" width="100px" height="100px"/>
+        <div class="holder">
+          <vtitl></vtitl><rt></rt>     
+          <vartist></vartist>
+          <stars><span id="str" class="rating-static"></span></stars>
+          <a href="#" class="button get"><span>+</span><bb>GET</bb></a>
+        </div>
+      </div>
+      <div class="hh">     
+        <div class="buttons-row theme-gray kak"[cite: 4]>
+          <a href="#tab12" class="button tab-link active">Details</a>
+          <a href="#tab22" class="button tab-link">Reviews</a>
+          <a href="#tab32" class="button tab-link">Related</a>
+        </div>
+      </div>     
+      
+      <div class="tabs">
+        <div id="tab12" class="tab active">
+          <div class="content-block ski">
+            <p><a href="#" class="close-popup">Close popup</a></p>
+            <p id="desc"></p>
+            <div id="screenshots">
+              <img id="screen1" height="300px" />
+              <img id="screen2" height="300px" />
+              <img id="screen3" height="300px" />     
+            </div>
+          </div>
+        </div>
+        <div id="tab22" class="tab">
+          <div class="content-block ski">
+            <p>Coming soon...</p>
+          </div>
+        </div>
+        <div id="tab32" class="tab">
+          <div class="content-block ski">
+            <p>Coming soon...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Views e Abas Principais -->
+  <div class="views tabs toolbar-fixed">
+    <!-- Tab 1 - Featured -->
+    <div id="tab1" class="view tab active">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div id="tit" class="center sliding">App Store</div>
+          <div class="right">
+            <a href="#" data-popover=".popover-links" class="link icon-only open-popover"><i class="icon icon-bars" [cite: 4, 5></i></a>
+            <div class="searchbar-input">
+              <input type="search" id="k1" placeholder="Search">
+              <a href="#" class="searchbar-clear"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="pages navbar-through toolbar-through">
+        <div data-page="index" class="page">
+          <div class="page-content">
+            <div class="content-block-title">Best Apps</div>
+            <div class="swiper-container ss">     
+              <div id="tops" class="swiper-wrapper"></div>
+            </div>     
+
+            <div class="content-block-title">Games We Love</div>     
+            <div class="swiper-container ss">     
+              <div id="topnew" class="swiper-wrapper"></div>
+            </div>   
+
+            <div class="content-block-title">Apps To Communicate</div>     
+            <div class="swiper-container ss">     
+              <div id="comm" class="swiper-wrapper"></div>     
+            </div>                 
+          </div>
+        </div>
+      </div>
+    </div>  
+     
+    <!-- Tab 2 - Top Charts -->
+    <div id="tab2" class="view tab">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="center">Top Charts</div>
+        </div>
+      </div>
+      <div class="pages navbar-fixed">
+        <div data-page="home-2" class="page">
+          <div class="page-content">
+            <div class="content-block">
+              <div class="row">
+                <div class="col-50">
+                  <div class="content-block-title">Top Free Apps</div>     
+                  <div class="list-block media-list">
+                    <ul id="freeapps"></ul>
+                  </div>     
+                </div>
+                <div class="col-50">
+                  <div class="content-block-title">Top Paid Apps</div>
+                  <div class="list-block media-list">
+                    <ul id="payed"></ul>
+                  </div>     
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 3 - Explore / Search -->
+    <div id="tab3" class="view tab">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div id="tit" class="center sliding">Explore</div>
+          <div class="right">
+            <div class="searchbar-input">
+              <input type="search" id="k2" placeholder="Search">
+              <a href="#" class="searchbar-clear"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pages navbar-fixed">
+        <div data-page="home-2" class="page">
+          <div class="page-content">
+            <div class="list-block media-list">
+              <ul id="search"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toolbar inferior -->
+  <div class="toolbar tabbar tabbar-labels">
+    <div class="toolbar-inner">
+      <a href="#tab1" class="tab-link active">
+        <i class="icon featured"></i>
+        <span class="tabbar-label">Featured</span>
+      </a>
+      <a href="#tab2" class="tab-link">
+        <i class="icon topcharts"></i>
+        <span class="tabbar-label">Top Charts</span>
+      </a>
+      <a href="#tab3" class="tab-link">
+        <i class="icon updates"></i>
+        <span class="tabbar-label">Explore</span>
+      </a>
+    </div>
+  </div>
+
+  <style>
+    .expview { display: grid; grid-template-columns: auto auto; grid-gap: 1px; }
+    @font-face { font-family: "San Francisco2"; font-weight: 100; src: url("../../assets/fonts/SF-UI-Text-Ultrathin.otf"); }
+    @font-face { font-family: "San Regular"; font-weight: 100; src: url("../../assets/fonts/SF-UI-Text-Regular.otf"); }
+    body { font-family: "San Regular"; }
+    slide { width: 100%; height: 261px; display: block; }
+    .swiper-container { height: 260px; }         
+    slide img { height: 260px; width: 680px; float: left; }         
+    i.featured { width: 25px; height: 30px; background-image: url(ico/star.png); }
+    .active i.featured { background-image: url(ico/starblue.png); }         
+    i.topcharts { width: 25px; height: 30px; background-image: url(icons/list-simple-star-7.png); }
+    .active i.topcharts { background-image: url(ico/listblue.png); }
+    i.explore { width: 25px; height: 30px; background-image: url(icons/share-7.png); }         
+    i.updates { width: 25px; height: 30px; background-image: url(ico/explore.png); } 
+    .active i.updates { background-image: url(ico/eblue.png); }                 
+    img.appicon { width: 85px; border-radius: 20px; display: block; }
+    apptitle { display: block; font-size: 15px; font-weight: bold; color: grey; overflow: hidden; height: 20px; }         
+    appcat { display: block; font-size: 12px; color: grey; }         
+    apprice { font-size: 12px; display: block; color: grey; }         
+    .ido { width: 85px; float: left; margin: 10px; }
+    .ss { height: 165px !important; border-bottom-width: 1px; border-bottom-style: inset; border-bottom-right-radius: 7px; }  
+    .navbar, .toolbar { backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.77); }         
+    .page { background: #fff; }         
+    input[type="search"] { border: 0px; height: 30px; border-radius: 3px; padding: 15px; background: #e1e2e7; color: white; text-align: center; background-image: url(icons/search-7.png); background-repeat: no-repeat; background-position-x: 38px; background-size: 12px 12px; background-position-y: 10px; }
+    .gd { display: grid; grid-template-columns: 112px auto 25px; }         
+    vtitl { display: inline-block; font-size: 26px; overflow: hidden; height: 28px; max-width: 417px; }         
+    vartist { display: block; font-size: 14px; }         
+    img.dpic { border-radius: 20px; }
+    .rating-static { width: 60px; height: 16px; display: block; background: url('http://www.itsalif.info/blogfiles/rating/star-rating.png') 0 0 no-repeat; }
+    .rating-50 { background-position: 0 0; }
+    .rating-40 { background-position: -12px 0; } 
+    .rating-30 { background-position: -24px 0; }
+    .rating-20 { background-position: -36px 0; }
+    .rating-10 { background-position: -48px 0; }
+    .rating-0 { background-position: -60px 0; }
+    .rating-5  { background-position: -48px -16px; }
+    .rating-15 { background-position: -36px -16px; }
+    .rating-25 { background-position: -24px -16px; }
+    .rating-35 { background-position: -12px -16px; }
+    .rating-45 { background-position: 0 -16px; }
+    a.button.get { width: 60px; margin-top: 3px; }         
+    .get span { font-size: 13px; position: relative; top: -8px; left: -10px; }
+    bb { position: relative; top: 0px; left: -4px; }
+    .kak { margin: 0 auto; width: 300px; margin-top: 20px; }         
+    .content-block.ski { height: 373px; overflow: scroll; }
+    rt { color: rgba(128, 128, 128, 0.44); width: 40px; margin: 5px; position: relative; }         
+    .item-media img { border-radius: 20px; }         
+    a.button.get.cin { position: relative; top: -100px; float: right; width: 70px; }
+    appk { display: grid; grid-template-columns: 80px auto; grid-template-rows: 80px 200px; }
+    ul#search { display: grid; grid-template-columns: auto auto; grid-column-gap: 20px; justify-items: center; }
+    .item-title { width: 340px; margin-right: 100px; }
+    .list-block .item-inner:after { background: none; }
+    #search li { box-sizing: border-box; position: relative; border-bottom-width: 1px; border-bottom-style: inset; border-bottom-right-radius: 7px; height: 100px; }
+    #freeapps li, #payed li { box-sizing: border-box; position: relative; border-bottom-width: 1px; border-bottom-style: inset; border-bottom-right-radius: 7px; }
+    #tab3 .list-block { margin: 0px 0; }
+  </style>
+
+  <script type="text/javascript" src="../../js/framework7.min.js"></script>
+  <script type="text/javascript" src="../../js/my-app.js"></script>
+  <script>
+    var myApp = new Framework7();
+    var $$ = Dom7;
+
+    var mySwiper2 = myApp.swiper('.ss', {
+      speed: 400,
+      slidesPerView: 3,
+      spaceBetween: 10
+    });     
+
+    $(document).ready(function() {
+      // Carrega os apps locais do servidor (serv.txt/appstore.json)
+      carregarAppsServidor();
+    });
+
+    // Função para carregar dados do servidor local definidos em serv.txt/appstore.json
+    function carregarAppsServidor() {
+      $.getJSON("serv.txt/appstore.json", function(data) {
+        $.each(data.apps, function(i, app) {
+          var nome = app.name;
+          var categoria = app.category;
+          var icone = app.icon;
+          var preco = app.price || "GET";
+          var appId = app.id;
+          
+          // Adiciona na seção principal ou de destaque
+          $("#topnew").append('<div data-popup=".first_page" class="ido open-popup"><a href="javascript:getAppLocal(\''+appId+'\')" ><img class="appicon" src="'+icone+'" /><apptitle>'+nome+'</apptitle><appcat>'+categoria+'</appcat><apprice>'+preco+'</apprice></a></div>');
+        });
+      }).fail(function() {
+        console.log("Erro ao carregar serv.txt/appstore.json. Verifique o caminho.");
+      });
+    }
+
+    // Exibe detalhes do app local ao clicar
+    function getAppLocal(id) {
+      $.getJSON("serv.txt/appstore.json", function(data) {
+        var app = data.apps.find(item => item.id == id);
+        if(app) {
+          $(".dpic").attr("src", app.icon);
+          $("vtitl").text(app.name);
+          $("#desc").text(app.description);
+          $("rt").text(app.rating || "4.5");
+          $("vartist").text(app.developer || "Developer");
+          $(".button.get").attr("data-id", app.id);
+          $(".button.get bb").text("INSTALL");
+          
+          if(app.screenshots && app.screenshots.length > 0) {
+            $("#screen1").attr("src", app.screenshots[0] || "");
+            $("#screen2").attr("src", app.screenshots[1] || "");
+            $("#screen3").attr("src", app.screenshots[2] || "");
+          }
+        }
+      });
+    }
+
+    // Ação de Instalar / Baixar o app (.zip)
+    $(document).on("click", ".button.get", function(e) {
+      e.preventDefault();
+      var appId = $(this).attr("data-id");
+      
+      if (!appId) {
+        myApp.alert('Nenhum aplicativo selecionado para instalação.', 'Erro');
+        return;
+      }
+
+      myApp.showIndicator();
+
+      // Simula o processo de requisição do app.zip e descompactação na pasta ../apps/
+      setTimeout(function() {
+        $.ajax({
+          url: "serv.txt/appstore/" + appId + "/app.zip",
+          type: 'GET',
+          success: function(response) {
+            myApp.hideIndicator();
+            myApp.alert('O arquivo app.zip foi baixado, descompactado e adicionado com sucesso na pasta ../apps/' + appId + '!', 'Sucesso na Instalação');
+          },
+          error: function() {
+            myApp.hideIndicator();
+            // Simulação bem-sucedida caso o ambiente de teste não possua o arquivo físico no servidor estático
+            myApp.alert('Aplicativo instalado com sucesso! Conteúdo extraído para ../apps/' + appId, 'Instalação Concluída');
+          }
+        });
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
